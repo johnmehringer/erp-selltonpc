@@ -12,6 +12,7 @@ AddEventHandler('np_selltonpc:dodeal', function(drugtype)
 	if drugtype == 'weed' then
 		itemprice = math.random(Config.WeedPriceMin,Config.WeedPriceMax)
 		itemamount = math.random(Config.WeedAmountMin, Config.WeedAmountMax)
+		drugitemname = 'marijuana'
 	elseif drugtype == 'coke' then
 		itemprice = math.random(Config.CokePriceMin,Config.CokePriceMax)
 		itemamount = math.random(Config.CokeAmountMin, Config.CokeAmountMax)
