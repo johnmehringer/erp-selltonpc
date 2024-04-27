@@ -105,7 +105,8 @@ function interact(type)
 	SetEntityAsMissionEntity(ped)
 	TaskStandStill(ped, 9.0)
 
-	exports['progressBars']:startUI(3500, "Attempting to secure a sale...")
+	-- exports['progressBars']:startUI(3500, "Attempting to secure a sale...")
+	exports['mythic_progbar']:startUI(3500, "Attempting to secure a sale...")
 	Citizen.Wait(3500)
 
 	-- Checks if they're a police officer

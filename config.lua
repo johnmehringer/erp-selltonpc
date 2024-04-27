@@ -3,7 +3,7 @@ Config = {}
 Config.IgnorePolice = false -- Enable to allow police job to sell drugs.
 Config.DistanceCheck = true -- Enable to check if player has walked away from the ped or the ped has walked away.
 Config.EnableAnimation = true -- Weed sell animation
-Config.NumberOfCops = 1 -- Set to 0 to disable.
+Config.NumberOfCops = 0 -- Set to 0 to disable.
 
 -- ## Enable Drugs ## --
 Config.EnableWeed = true
@@ -15,7 +15,7 @@ Config.WeedAmountMin=1  	--minimum
 Config.WeedAmountMax=5  	--maximum
 
 
-Config.EnableCoke = true
+Config.EnableCoke = false
 -- ### Price Coke ### --
 Config.CokePriceMin=300  	--minimum
 Config.CokePriceMax=500  	--maximum
@@ -23,7 +23,7 @@ Config.CokePriceMax=500  	--maximum
 Config.CokeAmountMin=1  	--minimum
 Config.CokeAmountMax=5  	--maximum
 
-Config.EnableMeth = true
+Config.EnableMeth = false
 -- ### Price Meth ### --
 Config.MethPriceMin=500  	--minimum
 Config.MethPriceMax=750  	--maximum
@@ -31,7 +31,7 @@ Config.MethPriceMax=750  	--maximum
 Config.MethAmountMin=1  	--minimum
 Config.MethAmountMax=15  	--maximum
 
-Config.EnableOpium = true
+Config.EnableOpium = false
 -- ## Price  Opium ## --
 Config.OpiumPriceMin=750  	--minimum
 Config.OpiumPriceMax=1000  	--maximum
