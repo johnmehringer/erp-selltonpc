@@ -66,7 +66,7 @@ AddEventHandler('checkD', function()
 		-- Since this is the only way to not make the server check for an item 4 times in a row
 
 		if Config.EnableWeed then
-			local weed = xPlayer.getInventoryItem('weed_pooch').count
+			local weed = xPlayer.getInventoryItem('marijuana').count
 			if weed >= 1 then
 				TriggerClientEvent("checkR", src, 'weed')
 				return
