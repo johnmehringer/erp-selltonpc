@@ -23,7 +23,7 @@ Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(5)
 		if ped ~= 0 and not IsPedDeadOrDying(ped) and not IsPedInAnyVehicle(ped) then 
-            local pedType = GetPedType(ped)
+			local pedType = GetPedType(ped)
 			if ped ~= oldped and not selling and (IsPedAPlayer(ped) == false and pedType ~= 28) then
 				TriggerServerEvent('checkD')
 				if drugtype ~= nil then
@@ -112,7 +112,7 @@ function interact(type)
 	
 	if not Config.IgnorePolice then
 		if ESX.PlayerData.job.name == 'police' then
-			exports['mythic_notify']:SendAlert('error', 'The buyer has seen you before, they know you\'re a cop!', 4000)
+			exports['mythic_notify'].DoCustomHudText('error', 'The buyer has seen you before, they know you\'re a cop!', 4000)
 			SetPedAsNoLongerNeeded(oldped)
 			selling = false
 			return
@@ -122,7 +122,11 @@ function interact(type)
 	-- Checks the distance between the PED and the seller before continuing.
 	if Config.DistanceCheck then
 		if ped ~= oldped then
-			exports['mythic_notify']:SendAlert('error', 'You acted sketchy (moved far away) and the buyer was no longer interested.', 5000)
+			-- exports['mythic_notify']:client:SendAlert('error', '1.You acted sketchy (moved far away) and the buyer was no longer interested.', 5000)
+            -- TriggerClientEvent('mythic_notify:client:SendAlert', source, { type = 'error', text = 'message' })
+			-- exports['mythic_notify']:SendAlert('error', 'You acted sketchy (moved far away) and the buyer was no longer interested.', 5000)
+			-- exports['mythic_notify'].DoCustomHudText('error', 'You acted sketchy (moved far away) and the buyer was no longer interested.', 5000)
+			exports['mythic_notify'].DoHudText('error', 'You acted sketchy (moved far away) and the buyer was no longer interested.')
 			SetPedAsNoLongerNeeded(oldped)
 			selling = false
 			return
@@ -133,7 +137,7 @@ function interact(type)
 	local percent = math.random(1, 11)
 
 	if percent <= 3 then
-		exports['mythic_notify']:SendAlert('error', 'The buyer was not interested.', 4000)
+		exports['mythic_notify'].DoCustomHudText('error', 'The buyer was not interested.', 4000)
 	elseif percent <= 10 then
 
 		if Config.EnableAnimation then
@@ -147,7 +151,7 @@ function interact(type)
 		streetName,_ = GetStreetNameAtCoord(playerCoords.x, playerCoords.y, playerCoords.z)
 		streetName = GetStreetNameFromHashKey(streetName)
 
-		exports['mythic_notify']:SendAlert('inform', 'The buyer is calling the police!', 4000)
+		exports['mythic_notify'].DoCustomHudText('inform', 'The buyer is calling the police!', 4000)
 		TriggerServerEvent('np_selltonpc:saleInProgress', streetName)
 	end
 	
